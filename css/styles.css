@@ -28,12 +28,13 @@ header {
   background-color: #2f2e2e;
   color: #fff;
   padding: 15px 60px;
-
-  max-width: 1200px;
+  /* align-items: center; */
   margin: 0 auto;
 }
 
 header .container {
+  max-width: 1200px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -159,7 +160,7 @@ h1 {
 }
 
 .gray-section {
-  padding: 50px 20px;
+  padding: 100px 20px;
 
 }
 
@@ -192,7 +193,7 @@ h1 {
 .skills-column h3 {
   font-size: 32px;
   margin-bottom: 15px;
-  color: #333;
+  color: #636262;
 }
 
 .skills-column ul {
@@ -214,6 +215,10 @@ h1 {
   left: -10px;
   color: #ff6600;
 }
+
+/* .skills-title {
+  color: #b51d1d;
+} */
 
 .noti {
   border-top: 2px solid #000000;
@@ -248,7 +253,7 @@ h1 {
 
 .experience-item h3 {
   font-size: 26px;
-  color: #282727;
+  color: #616060;
   margin-bottom: 7px;
 }
 
@@ -368,7 +373,7 @@ ul {
 
 .text-item {
   font-size: 26px;
-  color: #181818;
+  color: #5b5656;
   margin: 0 0 5px;
   font-weight: 600;
 }
@@ -493,6 +498,7 @@ ul {
   z-index: 10;
   overflow: hidden;
   max-height: 150px;
+  max-width: 1200px;
   transition: max-height 0.3s ease-in-out;
 
   display: flex;
@@ -703,7 +709,11 @@ main {
   margin: 0 auto;
 }
 
-.prifile-section {
+.project-section {
+  padding-bottom: 80px;
+}
+
+.project-container {
   background: linear-gradient(135deg, #ffffff, #d7d3c9, #ffffff);
   max-width: 1200px;
   padding: 40px 20px;
