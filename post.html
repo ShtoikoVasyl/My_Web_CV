@@ -16,7 +16,7 @@
       <div class="footer-logo">
         <div class="logo">
           <a href="index.html" class="logo-link">
-            <h1 class="logo-vc">Vasyl_Shtoiko.<span class="logo-span">Cv</span></h1>
+            <h1 class="logo-vc">shtoiko.<span class="logo-span">dev</span></h1>
           </a>
         </div>
         <p class="short-description">This project is devoted to the topic of Java programming...</p>
@@ -25,8 +25,8 @@
 
       <div class="social-linka">
         <a href="https://github.com/ShtoikoVasyl" class="social-linker">GitHub</a>
-        <a href="https://www.linkedin.com/in/your-profile" class="social-linker">Swagger</a>
-        <a href="https://www.instagram.com/your-profile" class="social-linker">Instagram</a>
+        <a href="http://13.36.126.221:8003/swagger-ui/index.html?urls.primaryName=AUTH_SERVICE" class="social-linker">Swagger</a>
+        <a href="https://www.linkedin.com/in/vasyl-shtoiko-895ab2316/" class="social-linker">LinkedIn</a>
 
       </div>
     </div>
@@ -34,122 +34,411 @@
   <main>
     <div style="box-shadow:none" class="post">
       <div style="background-color: #ff6600;" class="liner"></div>
-      <h2 class="text-block1">Mechanisms of CAS and FAA through the eyes of a Java developer</h2>
-      <img class="img-postarsr" src="./img/block1.webp" alt="Зображення 1">
+      <!-- <h2 class="text-block1">Mechanisms of CAS and FAA through the eyes of a Java developer</h2> -->
+      <div class="post-main_content">
+        <div class="post-img">
+          <img class="img-postarsr" src="./img/block1.webp" alt="Зображення 1">
+        </div>
+        <p><strong>BankSim: A Learning Project and Testbed for New Technologies</strong></p>
 
-      <p class="shortes-text">In this article, we will consider the mechanisms for providing multi-threaded CAS and FAA
-        p
-        points
-        a Java developer's point of view...</p>
+        <p>BankSim is an educational project created to develop skills in the modern enterprise technology stack. Its
+          purpose is not only to build expertise but also to serve as a testbed for experimenting with new technologies,
+          such as new versions of Spring and other frameworks, in the future. The project is designed to push my
+          understanding of current industry practices while allowing flexibility in the learning process. It provides a
+          valuable opportunity to practice using various tools and learn from mistakes, which are essential for growth.
+          Additionally, it helps me improve my problem-solving abilities and technical skills in an environment that
+          closely simulates enterprise-level challenges.</p>
+      </div>
       <div style="display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;" class="full-text-container">
-        <div class="full">
-          <img class="img-postar" src="./img/block3.webp" alt="Зображення 2">
-          <p>CAS (Compare-and-Swap) is one of the most common mechanisms for atomic operations...</p>
+        <p>For building this application, I chose a microservices architecture because it provides the opportunity to
+          gain
+          experience with a wide range of tools and components that are relevant for modern development. This
+          architecture
+          also allows better separation of responsibilities and ensures greater reliability of the system. Moreover, it
+          offers flexibility for future upgrades or technology integrations. It also ensures scalability, which is an
+          essential factor for any distributed system.</p>
+
+        <p>In the initial phase of development, I decided not to stick to a specific architectural pattern, such as
+          Event-Driven or Domain-Driven Design, as it could limit the tools I could use and require additional time to
+          implement. Instead, I focused on quickly achieving results and experimenting with different approaches to find
+          the most effective solutions for the given challenges. The first release of the project includes aspects of
+          different architectural patterns and various methods of interaction between microservices, allowing me to
+          explore and refine different solutions.</p>
+
+        <h3><strong>Technology Stack for the First Release</strong></h3>
+        <p>• <strong>Spring Boot</strong> (Data JPA, Web, WebFlux, Security, Validation): the foundation for building
+          microservices.<br>
+          • <strong>Springdoc OpenApi-UI</strong>: for documenting REST APIs.<br>
+          • <strong>Spring Kafka</strong>: for message exchange between services, enabling asynchronous communication
+          and
+          supporting large data volumes.<br>
+          • <strong>Spring Cloud</strong> (Gateway, Config, Eureka Discovery, OpenFeign): for microservice integration,
+          request routing, and centralized configuration.<br>
+          • <strong>Flyway</strong>: for database migration management.<br>
+          • <strong>gRPC (com.google)</strong>: for high-performance microservice communication, reducing latency
+          compared
+          to traditional REST APIs.<br>
+          • <strong>PostgreSQL</strong>: relational database for structured data storage.<br>
+          • <strong>MongoDB</strong>: document-oriented database for unstructured data storage.
+        </p>
+
+        <p>BankSim is a project that not only enhances my technical skills but also allows me to experiment with new
+          tools
+          and approaches. Testing new solutions in this project will help me stay current with industry trends and apply
+          these skills to deliver value in a real-world enterprise environment.</p>
+      </div>
+
+      <div class="post-read_more-btn"><a href="javascript:void(0);" class="read-more" onclick="toggleText(this)"
+          style="color: #ff6600;">Read more</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="line"></div>
+      <h2 class="text-block">Planning the High-Level Architecture of BankSim</h2>
+      <p class="parg-block">October 15, 2024</p>
+      <div class="post-img">
+        <img class="img-post" src="./img/block2.webp" alt="Зображення 2">
+      </div>
+      <p class="short-text">When planning the high-level architecture of BankSim, I took into account the expected load,
+        which implies
+        the need for scalability, as well as the logical separation of responsibilities among microservices. The
+        resulting architecture for the first release includes the following services:</p>
+
+      <div class="full-text-container">
+        <p class="full-text">• <strong>Infrastructure Service</strong>: Handles ATM operations and, in the future, will
+          also manage bank
+          tellers.<br>
+          • <strong>Account Service</strong>: Manages user accounts and their transactions.<br>
+          • <strong>Transaction Provider</strong>: Executes transactions between accounts and performs currency
+          conversions. In the future, I plan to split this service into two separate microservices: <strong>Transaction
+            Manager</strong>, which will handle currency conversions and commission calculations, and
+          <strong>Transaction Provider</strong>, which will only execute transactions. For security reasons, Transaction
+          Provider will not have any other endpoints or connections besides those with Transaction Manager.
+          <br>
+          • <strong>User Service</strong>: Handles user data.<br>
+          • <strong>Auth Service</strong>: Manages user authentication, issuance, and renewal of JWT tokens.<br>
+          • <strong>Gateway</strong>: Routes requests between the different services.<br>
+          • <strong>Config Service</strong>: Provides centralized configuration management.<br>
+          • <strong>Discovery Service</strong>: Registers microservices within the system.
+        </p>
+
+        <p class="full-text">This configuration allows for optimal load distribution and high fault tolerance in case
+          any microservice
+          fails. The image below illustrates how the system can operate with limited functionality in such situations.
+        </p>
+
+        <p class="full-text">This high-level architecture reflects a practical balance between initial simplicity and
+          future
+          extensibility, allowing me to focus on core functionality now while keeping room for future growth and
+          experimentation.</p>
+
+        <div class="post-img">
+          <img class="img-post" src="./img/block2_1.webp" alt="Зображення 2">
         </div>
 
-        <div class="full">
-          <img class="img-postar" src="./img/block3.webp" alt="Зображення 2">
-          <p>CAS (Compare-and-Swap) is one of the most common mechanisms for atomic operations...</p>
+        <p class="full-text">By designing the system with scalability and logical separation in mind, I aimed to ensure
+          that each
+          microservice has a clear set of responsibilities, making the system easier to maintain and evolve over time.
+          The modular approach also provides the flexibility to enhance or replace components as new requirements
+          emerge. Additionally, the use of separate services for different responsibilities, such as user authentication
+          and transaction management, helps to improve security and scalability, ensuring that critical functions remain
+          isolated and protected from potential vulnerabilities in other parts of the system.</p>
+
+      </div>
+      <div class="post-read_more-btn">
+        <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="line"></div>
+      <h2 class="text-block">Optimizing BankSim Deployment on AWS</h2>
+      <p class="parg-block">October 16, 2023</p>
+      <div class="post-img">
+        <img class="img-post" src="./img/block3.webp" alt="Зображення 2">
+      </div>
+
+      <p class="short-text">When developing the BankSim project, I initially knew that I would be deploying it on AWS,
+        using at least one
+        free-tier EC2 instance with a static IP address. The free-tier EC2 options on AWS are t2.micro and t3.micro,
+        which come with only 1 CPU and 1 GB of RAM. Herein lay the challenge: I needed three microservices with static
+        addresses for Gateway, Config Server, and Discovery Server. Each microservice requires between 300 MB and 450
+        MB of RAM, meaning I needed at least 1350 MB of RAM to ensure smooth operation. However, the t2.micro and
+        t3.micro instances only offer 1 GB of RAM, which is insufficient.</p>
+      <div class="full-text-container">
+
+        <p class="full-text">The solution to this problem was found in the Spring documentation. Typically, for
+          registering microservices
+          in a distributed Spring Cloud network, you need the address of both the Config Server and the Discovery
+          Server, which is the most common configuration. However, I discovered a solution that allowed me to use only
+          the address of the Discovery Server.</p>
+
+        <p class="full-text">In the final implementation, my microservices register as follows:</p>
+        <p class="full-text">
+          • <strong>Step 1 </strong>Upon startup, the microservice queries the Discovery Server and retrieves the
+          address of the registered
+          Config Server.<br>
+          • <strong>Step 2 </strong>The microservice then sends a request to the Config Server to obtain all the
+          required configuration
+          properties.<br>
+          • <strong>Step 3 </strong>Finally, it registers itself with the Discovery Server and continues sending
+          heartbeats to indicate that
+          it is active in the network.<br>
+        </p>
+
+        <p class="full-text">This optimization allowed me to reduce resource consumption and successfully run all
+          necessary microservices
+          on a single instance with limited memory. The animation above shows the full startup cycle of the system and
+          how a user request is handled through the Gateway.</p>
+      </div>
+
+      <div class="post-read_more-btn">
+        <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="line"></div>
+      <h2 class="text-block">Setting Up BankSim's Core Services: Discovery Server and Gateway</h2>
+      <p class="parg-block">October 16, 2024</p>
+      <div class="post-img">
+        <img class="img-post" src="./img/block4.webp" alt="Зображення 4">
+      </div>
+      <!-- <p class="short-text">In this article, we will consider the mechanisms for providing multi-threaded CAS and FAA p
+        points
+        Java developer's point of view...</p> -->
+      <p class="short-text">The deployment of a microservice project requires careful preparation of infrastructure,
+        including core services like Discovery Server and Gateway. In this post, I'll share my experience of deploying
+        these core components of BankSim on AWS.</p>
+
+      <div class="full-text-container">
+        <!-- <p class="full-text">Contents of the article: Introduction 1.1. Definition of CAS and FAA 1.2. Justification of
+          the importance of atomic
+          operations 1.3. A brief overview of the use of CAS and FAA in multithreaded applications. CAS
+          (Compare-and-Swap) 2.1.
+          Description
+          CAS mechanism 2.2. Examples of using CAS in Java 2.2.1. AtomicInteger, AtomicLong and other examples...</p>
+          -->
+
+        <h3>Deploying Discovery Server on AWS</h3>
+
+        <p class="full-text">The <strong>Discovery Server</strong> plays a crucial role in the architecture of BankSim,
+          as it registers
+          all the microservices and keeps track of their availability in the system. To start, I configured the
+          environment, created a Docker image, and deployed the Discovery Server on a t3.micro instance using the
+          following script:</p>
+        <div class="code-space-container">
+          <div class="code-space">
+            <pre><code>
+#!/bin/bash
+
+DISCOVERY_PASSWORD=password
+DISCOVERY_USERNAME=username
+EUREKA_SERVER_PORT=8001
+EUREKA_HOSTNAME="localhost"
+
+IMAGE_NAME="discovery_serv"
+
+docker run -d -p ${EUREKA_SERVER_PORT}:${EUREKA_SERVER_PORT} \
+  -e DISCOVERY_PASSWORD=${DISCOVERY_PASSWORD} \
+  -e DISCOVERY_USERNAME=${DISCOVERY_USERNAME} \
+  -e SERVER_PORT=${EUREKA_SERVER_PORT} \
+  -e EUREKA_HOSTNAME=${EUREKA_HOSTNAME} \
+  ${IMAGE_NAME}
+</code></pre>
+          </div>
         </div>
 
-        <div class="full">
-          <img class="img-postar" src="./img/block3.webp" alt="Зображення 2">
-          <p>CAS (Compare-and-Swap) is one of the most common mechanisms for atomic operations...</p>
+        <p class="full-text">Here, <code>EUREKA_HOSTNAME</code> and <code>EUREKA_SERVER_PORT</code> represent the
+          address and port of the
+          Discovery Server instance. Since I planned to deploy only one instance, the values were set to
+          <code>localhost</code> and <code>8001</code>, meaning the Discovery Server would register itself. I also
+          configured a username and password for future microservices to register securely.
+        </p>
+
+        <h3>Deploying Gateway on AWS</h3>
+
+        <p class="full-text">The <strong>Gateway</strong> is responsible for routing requests to different microservices
+          within the
+          system. I deployed the Gateway using another t3.micro instance with the following script:</p>
+
+        <div class="code-space-container">
+          <div class="code-space">
+            <pre><code>
+#!/bin/bash
+
+CONFIG_SERVER_PASSWORD=password
+CONFIG_SERVER_USERNAME=username
+GATEWAY_SERVER_PORT=8003
+EUREKA_URL="http://discovery-username:discovery-password@discovery-host:8001/eureka/"
+
+IMAGE_NAME="api_gateway"
+
+EXTERNAL_IP=$(hostname -I | awk '{print $1}')
+
+docker run -d -p ${GATEWAY_SERVER_PORT}:${GATEWAY_SERVER_PORT} \
+  -e CONFIG_SERVER_PASSWORD=${CONFIG_SERVER_PASSWORD} \
+  -e CONFIG_SERVER_USERNAME=${CONFIG_SERVER_USERNAME} \
+  -e SERVER_PORT=${GATEWAY_SERVER_PORT} \
+  -e EUREKA_URL=${EUREKA_URL} \
+  -e EXTERNAL_IP=${EXTERNAL_IP} \
+  ${IMAGE_NAME}
+</code></pre>
+          </div>
+        </div>
+        <p class="full-text">The <strong>EXTERNAL_IP</strong> variable is crucial for registering the server's external
+          address with the
+          Discovery Server. On most Linux distributions, you can obtain the IP using the command
+          <code>$(hostname -I | awk '{print $1}')</code>. However, since I deployed the project on AWS, I used a
+          different command to retrieve the instance's public IP address:
+        </p>
+        <div class="code-space-container">
+          <div class="code-space">
+            <pre><code>
+$(curl -H "X-aws-ec2-metadata-token: $(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")" http://169.254.169.254/latest/meta-data/public-ipv4)
+</code></pre>
+          </div>
+        </div>
+
+        <p class="full-text">The <strong>EUREKA_URL</strong> contains the Discovery Server's address along with the
+          login credentials
+          needed for registration.</p>
+
+        <h3>Summary</h3>
+
+        <p class="full-text">Deploying Discovery Server and Gateway was a foundational step in creating the BankSim
+          infrastructure. By
+          setting up these core components first, I could ensure that future microservices could seamlessly register
+          themselves and interact through the Gateway, making the architecture scalable and well-organized.</p>
+        <div class="post-img">
+          <img class="img-post" src="./img/block4_1.webp" alt="Зображення 4">
         </div>
       </div>
-
-      <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+      <div class="post-read_more-btn">
+        <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+      </div>
     </div>
 
     <div class="post">
       <div class="line"></div>
-      <h2 class="text-block">ExecutorService in Java and examples of its use</h2>
-      <p class="parg-block">April 22, 2023 by proselyte Leave a Comment</p>
-      <img class="img-post" src="./img/block2.webp" alt="Зображення 2">
-      <p class="short-text">In this article, we will consider the mechanisms for providing multi-threaded CAS and FAA p
-        points
-        Java developer's point of view...</p>
+      <h2 class="text-block">Setting Up BankSim's Core Services: Deploying Config Server and Other Microservices</h2>
+      <p class="parg-block">October 19, 2024</p>
+      <div class="post-img">
+        <img class="img-post" src="./img/block5.webp" alt="Зображення 5">
+      </div>
+      <p class="short-text">After setting up the core services like the Discovery Server and Gateway, the next step was
+        to deploy the <strong>Config Server</strong> and the rest of the microservices. Here’s how I navigated the
+        challenges and completed the deployment process for BankSim.</p>
 
       <div class="full-text-container">
-        <p class="full-text">Contents of the article: Introduction 1.1. Definition of CAS and FAA 1.2. Justification of
-          the importance of atomic
-          operations 1.3. A brief overview of the use of CAS and FAA in multithreaded applications. CAS
-          (Compare-and-Swap) 2.1.
-          Description
-          CAS mechanism 2.2. Examples of using CAS in Java 2.2.1. AtomicInteger, AtomicLong and other examples...</p>
-      </div>
 
-      <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+        <h3>Deploying Config Server on AWS and Raspberry Pi</h3>
+
+        <p class="full-text">The <strong>Config Server</strong> is essential for providing centralized configuration to
+          all microservices.
+          My initial plan was to deploy part of the project on a <strong>Raspberry Pi 5</strong> to save costs. However,
+          I
+          faced issues when using public Wi-Fi without access to the router—specifically, the router's firewall blocked
+          access to my microservices. To solve this, I rented an additional EC2 instance and proceeded with the
+          deployment.</p>
+
+        <p class="full-text">The script to run the Config Server container looks like this:</p>
+        <div class="code-space-container">
+          <div class="code-space">
+            <pre><code>
+#!/bin/bash
+
+ACTIVE_PROFILE="native"
+CONFIG_SERVER_PASSWORD="my-password"
+CONFIG_SERVER_USERNAME="my-username"
+GIT_PASSWORD="my-git-password"
+GIT_URI="https://my-git-repo-url"
+GIT_USERNAME="my-git-username"
+CONFIG_SERV_SERVER_PORT=8002
+EUREKA_URL="http://my-username:my-password@localhost:8001/eureka/"
+
+IMAGE_NAME="config_serv"
+
+EXTERNAL_IP=$(hostname -I | awk '{print $1}')
+
+docker run -d -p ${CONFIG_SERV_SERVER_PORT}:${CONFIG_SERV_SERVER_PORT} \
+  -e ACTIVE_PROFILE=${ACTIVE_PROFILE} \
+  -e CONFIG_SERVER_PASSWORD=${CONFIG_SERVER_PASSWORD} \
+  -e CONFIG_SERVER_USERNAME=${CONFIG_SERVER_USERNAME} \
+  -e GIT_PASSWORD=${GIT_PASSWORD} \
+  -e GIT_URI=${GIT_URI} \
+  -e GIT_USERNAME=${GIT_USERNAME} \
+  -e EUREKA_URL=${EUREKA_URL} \
+  -e SERVER_PORT=${CONFIG_SERV_SERVER_PORT} \
+  -e EXTERNAL_IP=${EXTERNAL_IP} \
+  ${IMAGE_NAME}
+</code></pre>
+          </div>
+        </div>
+        <p class="full-text">Here, the <code>ACTIVE_PROFILE="native"</code> value means the application will load
+          configuration files
+          locally from the <code>/config/</code> directory. Alternatively, setting <code>"git"</code> would make the
+          application look for configurations in the Git repository specified by <code>GIT_URI</code>.</p>
+
+        <h3>Deploying Other Service Microservices</h3>
+
+        <p class="full-text">Once the Config Server was up and running, I moved on to deploying other service
+          microservices. These
+          microservices use similar deployment scripts, and here's an example:</p>
+        <div class="code-space-container">
+          <div class="code-space">
+            <pre><code>
+#!/bin/bash
+
+CONFIG_SERVER_PASSWORD="my-password"
+CONFIG_SERVER_USERNAME="my-username"
+TRANSACTION_SERV_REST_SERVER_PORT=8006
+EUREKA_URL="my-eureka-url"
+ACTIVE_PROFILE="prod"
+
+IMAGE_NAME="transaction_serv"
+
+EXTERNAL_IP=$(hostname -I | awk '{print $1}')
+
+docker run -d -p ${TRANSACTION_SERV_REST_SERVER_PORT}:${TRANSACTION_SERV_REST_SERVER_PORT} \
+  -e CONFIG_SERVER_PASSWORD=${CONFIG_SERVER_PASSWORD} \
+  -e CONFIG_SERVER_USERNAME=${CONFIG_SERVER_USERNAME} \
+  -e REST_SERVER_PORT=${TRANSACTION_SERV_REST_SERVER_PORT} \
+  -e EUREKA_URL=${EUREKA_URL} \
+  -e ACTIVE_PROFILE=${ACTIVE_PROFILE} \
+  -e EXTERNAL_IP=${EXTERNAL_IP} \
+  ${IMAGE_NAME}
+</code></pre>
+          </div>
+        </div>
+        <p class="full-text">This script allows the service microservice to connect to the Config Server and register
+          itself with the
+          Discovery Server.</p>
+
+        <h3>Lessons Learned and Next Steps</h3>
+
+        <p class="full-text">Deploying the Config Server and other microservices on both AWS and Raspberry Pi presented
+          challenges with
+          networking and resources. However, leveraging both AWS and a cost-effective Raspberry Pi allowed me to create
+          a
+          distributed infrastructure that balances cost and functionality. By configuring the Discovery Server, Gateway,
+          and Config Server, I ensured a centralized, scalable approach for managing all microservices effectively.</p>
+
+        <p class="full-text">This deployment marks a key milestone in making BankSim a fully operational distributed
+          system, capable of
+          scaling and adapting to future requirements.</p>
+      </div>
+      <div class="post-read_more-btn">
+        <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+      </div>
     </div>
 
-    <div class="post">
-      <div class="line"></div>
-      <h2 class="text-block">Features of the work of PreparedStatement in JDBC</h2>
-      <p class="parg-block">April 1, 2023 by proselyte Leave a Comment</p>
-      <img class="img-post" src="./img/block3.webp" alt="Зображення 3">
-      <p class="short-text">In this article, we will consider the mechanisms for providing multi-threaded CAS and FAA p
-        points
-        Java developer's point of view...</p>
-
-      <div class="full-text-container">
-        <p class="full-text">Contents of the article: Introduction 1.1. Definition of CAS and FAA 1.2. Justification of
-          the importance of atomic
-          operations 1.3. A brief overview of the use of CAS and FAA in multithreaded applications. CAS
-          (Compare-and-Swap) 2.1.
-          Description
-          CAS mechanism 2.2. Examples of using CAS in Java 2.2.1. AtomicInteger, AtomicLong and other examples...</p>
-      </div>
-
-      <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
-    </div>
-
-    <div class="post">
-      <div class="line"></div>
-      <h2 class="text-block">Basics of caching in Hibernate</h2>
-      <p class="parg-block">March 29, 2023 by proselyte Leave a Comment</p>
-      <img class="img-post" src="./img/block4.webp" alt="Зображення 4">
-      <p class="short-text">In this article, we will consider the mechanisms for providing multi-threaded CAS and FAA p
-        points
-        Java developer's point of view...</p>
-
-      <div class="full-text-container">
-        <p class="full-text">Contents of the article: Introduction 1.1. Definition of CAS and FAA 1.2. Justification of
-          the importance of atomic
-          operations 1.3. A brief overview of the use of CAS and FAA in multithreaded applications. CAS
-          (Compare-and-Swap) 2.1.
-          Description
-          CAS mechanism 2.2. Examples of using CAS in Java 2.2.1. AtomicInteger, AtomicLong and other examples...</p>
-      </div>
-
-      <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
-    </div>
-
-    <div class="post">
-      <div class="line"></div>
-      <h2 class="text-block">Reading phenomena through the eyes of a developer</h2>
-      <p class="parg-block">March 25, 2023 by proselyte Leave a Comment</p>
-      <img class="img-post" src="./img/block5.webp" alt="Зображення 5">
-      <p class="short-text">In this article, we will consider the mechanisms for providing multi-threaded CAS and FAA p
-        points
-        Java developer's point of view...</p>
-
-      <div class="full-text-container">
-        <p class="full-text">Contents of the article: Introduction 1.1. Definition of CAS and FAA 1.2. Justification of
-          the importance of atomic
-          operations 1.3. A brief overview of the use of CAS and FAA in multithreaded applications. CAS
-          (Compare-and-Swap) 2.1.
-          Description
-          CAS mechanism 2.2. Examples of using CAS in Java 2.2.1. AtomicInteger, AtomicLong and other examples...</p>
-      </div>
-
-      <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
-    </div>
-
-    <div class="post">
+    <!-- <div class="post">
       <div class="line"></div>
       <h2 class="text-block">Device and operation of JVM (Java Virtual Machine)</h2>
       <p class="parg-block">March 29, 2023 by proselyte Leave a Comment</p>
@@ -168,9 +457,9 @@
       </div>
 
       <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
-    </div>
+    </div> -->
 
-    <div class="post">
+    <!-- <div class="post">
       <div class="line"></div>
       <h2 class="text-block">Usefulness: SOLID through the eyes of a developer</h2>
       <p class="parg-block">March 25, 2023 by proselyte Leave a Comment</p>
@@ -190,6 +479,8 @@
 
       <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
     </div>
+
+     -->
   </main>
 
   <footer class="footer">
@@ -197,7 +488,7 @@
       <div class="container-foot">
         <div class="footer-logo">
           <div class="logo">
-            <h1 class="logo-vc">Vasyl_Shtoiko.<span class="logo-span">Cv</span></h1>
+            <h1 class="logo-vc">shtoiko.<span class="logo-span">dev</span></h1>
           </div>
         </div>
 
@@ -215,7 +506,7 @@
           </a>
         </div>
       </div>
-      <p class="footer-rights">2024 Vasyl_Shtoiko.Cv</p>
+      <p class="footer-rights">2024 shtoiko.dev</p>
     </div>
   </footer>
 

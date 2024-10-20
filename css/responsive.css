@@ -1,4 +1,25 @@
 /* Вирівнювання для маленьких екранів */
+
+@media (max-width: 950px) {
+
+  .btn-download {
+    font-size: 15px;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+  }
+
+  nav .nav-logo {
+  margin: auto;
+  gap: 30px;
+  }
+
+}
+
+
+
+
 @media (max-width: 768px) {
   * {
     margin: 0;
@@ -29,6 +50,14 @@
 
   .logo-vc {
     font-size: 28px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  .btn-download {
+    font-size: 14px;
   }
 
   nav .nav-logo {
@@ -333,7 +362,7 @@
     margin-bottom: 16px;
     border-radius: 10px;
     box-shadow: 0 0 30px rgb(0 0 0 / 27%);
-    text-align: center;
+    /* text-align: center; */
     max-width: 1200px;
   }
 
@@ -344,7 +373,7 @@
     height: 1px;
     background-color: #bdb7b7;
     margin-bottom: 10px;
-    margin-top: 145px;
+    /* margin-top: 145px; */
   }
 
 

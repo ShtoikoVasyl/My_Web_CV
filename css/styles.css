@@ -4,6 +4,38 @@
   box-sizing: border-box;
 }
 
+code {
+  background-color: #e0e0e09d;
+}
+
+.code-space code {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-all;
+  background-color: #e0e0e09d;
+}
+
+.code-space pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.code-space {
+  background-color: #e0e0e09d;
+  border-radius: 5px;
+  width: 75%;
+}
+
+.code-space-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100%; */
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -75,16 +107,19 @@ nav ul li a {
   color: #fff;
   transition: color 0.3s;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   text-align: center;
 }
 
 li {
   display: flex;
-  justify-content: center;   /* Центрування по горизонталі */
-  align-items: center;       /* Центрування по вертикалі */
+  justify-content: center;
+  /* Центрування по горизонталі */
+  align-items: center;
+  /* Центрування по вертикалі */
   /* height: 100px;      */
-  text-align: center;        /* Вирівнює багаторядковий текст по центру */
+  text-align: center;
+  /* Вирівнює багаторядковий текст по центру */
 }
 
 nav ul li a:hover {
@@ -128,7 +163,7 @@ nav ul li a:hover {
   font-weight: bold;
   font-size: 16px;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   text-align: center;
 }
 
@@ -139,8 +174,10 @@ nav ul li a:hover {
 .container-hero-content {
   max-width: 1200px;
   display: flex;
-  flex-direction: row;
-  gap: 50px;
+  flex-direction: row; /* Горизонтальне розташування елементів за замовчуванням */
+  gap: 50px; /* Відстань між контейнерами */
+  align-items: stretch; /* Вирівнювання по висоті */
+  height: 100%; /* Висота 100%, щоб дати можливість розтягуватися */
 }
 
 .profile-photo {
@@ -155,11 +192,18 @@ nav ul li a:hover {
 
 .hero-text {
   max-width: 600px;
+  width: 75%; /* Займає половину ширини */
+  height: 100%; /* Висота 100%, щоб відповідати висоті контейнера Б */
 }
+
 
 h1 {
   font-size: 48px;
   color: #3a3a3a;
+}
+
+.post h3 {
+  text-align: center;
 }
 
 .job-title {
@@ -202,6 +246,15 @@ h1 {
   margin: 10px 0 auto;
   width: 100%;
   text-align: center;
+}
+
+.text-java-motto {
+  font-size: 18px;
+  color: #363535;
+  margin: 10px 0 auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .skills-section {
@@ -251,8 +304,9 @@ h1 {
 } */
 
 .noti {
-  border-top: 2px solid #000000;
+  border-top: 2px solid #bbbbbb9e;
   width: 97%;
+  max-width: 1100px;
   margin: 20px auto;
 }
 
@@ -588,7 +642,7 @@ ul {
 
 .short-text {
   display: block;
-  width: 64%;
+  width: 90%;
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
@@ -596,7 +650,7 @@ ul {
 }
 
 .full-text {
-  width: 64%;
+  width: 90%;
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.5;
@@ -621,12 +675,53 @@ main {
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 0 30px rgb(0 0 0 / 27%);
-  text-align: center;
-  max-width: 900px;
+  /* text-align: center; */
+  max-width: 1200px;
 }
 
-.img-postar {
+.post h1 {
+  color: #444;
+  font-size: 2em;
+  text-align: center;
+}
+
+.post h2 {
+  color: #555;
+  font-size: 1.5em;
+  margin-top: 1.5em;
+}
+
+.post p {
+  margin-bottom: 1em;
+  font-size: 1.1em;
+}
+
+.post ul {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
+.post li {
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+
+.post strong {
+  color: #000;
+}
+
+/* .img-postar {
   width: 100%;
+} */
+
+.post-img {
+  float: left;
+  margin: 0 15px 15px 0;
+}
+
+.img-postarsr {
+  max-width: 500px;
+  height: auto;
 }
 
 .liner {
@@ -636,6 +731,10 @@ main {
   background-color: #bdb7b7;
   margin-bottom: 10px;
 }
+
+/* .post-main_content {
+  flex: 1;
+} */
 
 .post-glav {
   background-color: white;
@@ -647,12 +746,26 @@ main {
 }
 
 
-.img-postarsr {
+/* .img-postarsr {
   width: 90%;
   height: auto;
   border-radius: 5px;
   margin-top: 20px;
 
+} */
+
+.post-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.post-read_more-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .full {
@@ -809,4 +922,123 @@ main {
 .btn-prfil:hover {
   background-color: #e65c00;
   /* Darker orange */
+}
+
+
+
+
+/* Основні стилі контейнера */
+/* .photo-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+} */
+
+.photo-container {
+  position: relative;
+  display: flex; /* Використовуємо flex для розтягування по висоті */
+  width: 35%; /* Займає половину ширини */
+  height: 100%; /* Висота 100% для розтягування */
+  margin: 0 auto;
+  justify-content: flex-end; /* Вирівнювання зображення праворуч */
+  padding-right: 15px; /* Відступ від правого краю контейнера */
+
+}
+
+/* Фото */
+.main-photo {
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* position: relative; */
+  border-radius: 10px; /* Згладження кутів */
+  z-index: 1; /* За фотографією */
+  margin-top: 10px;
+  margin-bottom: 25%; 
+  /* max-width: 350px; */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.yellow-square {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 40%;
+  height: 25%;
+  background-color: transparent; /* Прозорий основний фон */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 3px,
+    #ffbb00 3px,
+    #ffbb00 6px
+  );
+  z-index: 0; /* Низький z-index, щоб бути позаду фотографії */
+}
+
+/* Синій квадрат (нижній лівий) */
+.blue-square {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 20%;
+  height: 20%;
+  background-color: transparent; /* Прозорий основний фон */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 3px,
+    #b4b4b4ae 3px,
+    #b4b4b4ae 6px
+  );
+  z-index: 0; /* Низький z-index, щоб бути позаду фотографії */
+}
+
+/* Адаптація під різні розміри екрана */
+@media (max-width: 768px) {
+  .yellow-square {
+    width: 100px;
+    height: 100px;
+    top: -15px;
+    right: -15px;
+  }
+  /* .photo-container{
+    width: 100%;
+  } */
+  .hero-text {
+    width: 100%;
+  }
+  .blue-square {
+    width: 70px;
+    height: 150px;
+    bottom: -15px;
+    left: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* .photo-container{
+    width: 100%;
+  } */
+  .hero-text {
+    width: 100%;
+  }
+  .yellow-square {
+    width: 70px;
+    height: 70px;
+    top: -10px;
+    right: -10px;
+  }
+  
+  .blue-square {
+    width: 50px;
+    height: 100px;
+    bottom: -10px;
+    left: -10px;
+  }
 }
