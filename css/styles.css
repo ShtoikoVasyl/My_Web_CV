@@ -153,6 +153,24 @@ nav ul li a:hover {
   color: #313030;
 }
 
+.btn-download-terminal {
+  display: inline-block;
+  padding: 7px 17px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.btn-download-terminal:hover {
+  background-color: #ff4500;
+}
+
 .btn-download {
   display: inline-block;
   padding: 10px 20px;
@@ -607,6 +625,10 @@ ul {
   color: #ff6600;
   font-weight: bold;
   transition: color 0.3s;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .social-linker:hover {
