@@ -161,7 +161,7 @@
     <div class="post">
       <div class="line"></div>
       <h2 class="text-block">Optimizing BankSim Deployment on AWS</h2>
-      <p class="parg-block">October 16, 2023</p>
+      <p class="parg-block">October 29, 2023</p>
       <div class="post-img">
         <img class="img-post" src="./img/block3.webp" alt="Зображення 2">
       </div>
@@ -208,7 +208,7 @@
     <div class="post">
       <div class="line"></div>
       <h2 class="text-block">Setting Up BankSim's Core Services: Discovery Server and Gateway</h2>
-      <p class="parg-block">October 16, 2024</p>
+      <p class="parg-block">October 30, 2024</p>
       <div class="post-img">
         <img class="img-post" src="./img/block4.webp" alt="Зображення 4">
       </div>
@@ -330,7 +330,7 @@ $(curl -H "X-aws-ec2-metadata-token: $(curl -X PUT "http://169.254.169.254/lates
     <div class="post">
       <div class="line"></div>
       <h2 class="text-block">Setting Up BankSim's Core Services: Deploying Config Server and Other Microservices</h2>
-      <p class="parg-block">October 19, 2024</p>
+      <p class="parg-block">November 19, 2024</p>
       <div class="post-img">
         <img class="img-post" src="./img/block5.webp" alt="Зображення 5">
       </div>
@@ -436,6 +436,40 @@ docker run -d -p ${TRANSACTION_SERV_REST_SERVER_PORT}:${TRANSACTION_SERV_REST_SE
           system, capable of
           scaling and adapting to future requirements.</p>
       </div>
+      <div class="post-read_more-btn">
+        <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="line"></div>
+      <h2 class="text-block">Integrating ATMsimulator into BankSim</h2>
+      <p class="parg-block">January 4, 2025</p>
+      <div class="post-img">
+        <img class="img-post" src="./img/block6.webp" alt="ATM Simulation">
+      </div>
+      <p class="short-text">
+        While developing the educational project BankSim, I integrated my previous project, ATMsimulator, to simulate ATM operations with features such as multi-currency support, secure data exchange via gRPC and JWT tokens, and dynamic banknote dispensing.
+      </p>
+    
+      <div class="full-text-container">
+        <p class="full-text">
+          While developing the educational project <strong>BankSim</strong>, I decided to integrate my previous project, <strong>ATMsimulator</strong>, which simulates the operation of an ATM. This application, written in Java 8, supports multiple currencies and allows determining which denominations should be dispensed to the user to provide the required amount. It also checks whether the transaction can be performed considering the available supply of banknotes. To avoid the need for manually inputting the initial banknote balance, the system automatically generates it randomly at startup, enabling the testing of various ATM usage scenarios.
+        </p>
+        <p class="full-text">
+          For the integration of <strong>ATMsimulator</strong> into <strong>BankSim</strong>, it was necessary to ensure its interaction with the infrastructure service <strong>INFRASTRUCTURESERVICE</strong>, which handles ATM requests. This required implementing a mechanism to query the <strong>Discovery Server</strong> to obtain a list of active service instances that include metadata with address and port information. To evenly distribute the load among the services, each new connection from <strong>ATMsimulator</strong> is established randomly with one of the available instances of <strong>INFRASTRUCTURESERVICE</strong>. Thanks to this approach, the system avoids overloading individual services and operates more reliably.
+        </p>
+        <p class="full-text">
+          For data exchange between the ATM and <strong>INFRASTRUCTURESERVICE</strong>, I decided to use <strong>gRPC</strong>, which enabled fast and efficient interaction between services by utilizing a binary data transmission format. An important aspect of the integration was ensuring the security of data exchange; therefore, I implemented authentication and authorization using <strong>JWT tokens</strong>, which guarantees that requests come from authorized terminals and that external services cannot interfere with the process.
+        </p>
+        <p class="full-text">
+          Special attention had to be paid to the correct routing of responses from the service to the ATM. To ensure proper handling of requests, <strong>INFRASTRUCTURESERVICE</strong> stores the connection with the terminal in a <strong>Map</strong> along with its unique identifier. When the ATM initiates a cash withdrawal request, the service appends its identifier to the transaction, allowing the response to be directed precisely to the terminal expecting it. This approach made it possible to implement account number and PIN verification, create a cash withdrawal transaction from the account, and deliver the result of the operation to the specific terminal.
+        </p>
+        <p class="full-text">
+          The development of this integration has made the <strong>BankSim</strong> system more flexible and functional. The use of <strong>gRPC</strong> and a custom implementation of the service discovery mechanism has ensured fast, scalable, and secure interaction among the services. The next step in the system’s evolution will be to expand transaction analytics, which will allow tracking user behavior and optimizing ATM operations, as well as improving the algorithms for selecting denominations to minimize leftover banknotes in the terminals. Integrating <strong>ATMsimulator</strong> into <strong>BankSim</strong> has been an important milestone in the project’s development and has provided valuable experience in building distributed systems.
+        </p>
+      </div>
+    
       <div class="post-read_more-btn">
         <a href="javascript:void(0);" class="read-more" onclick="toggleText(this)" style="color: #ff6600;">Read more</a>
       </div>
